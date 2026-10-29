@@ -16,7 +16,9 @@ public function __construct(private OpenAiService $openAiService)
     
 }
     /**
-     * Display a listing of the resource.
+     * List the authenticated user's image generations.
+     *
+     * Returns the latest generations in a paginated collection.
      */
     public function index()
     {
@@ -27,7 +29,9 @@ public function __construct(private OpenAiService $openAiService)
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Generate a descriptive prompt from an uploaded image.
+     *
+     * Stores the image and returns its generated prompt and metadata.
      */
     public function store(GeneratePromptRequest $request)
     {
