@@ -39,7 +39,7 @@ jobs:
         run: |
           ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.DEPLOY_PATH }}
-            PHP=/opt/cpanel/ea-php82/root/usr/bin/php
+            PHP=/usr/local/bin/php
             $PHP artisan migrate --force
             $PHP artisan config:cache
             $PHP artisan route:cache
